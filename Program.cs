@@ -24,12 +24,34 @@ else
 {
     System.Console.WriteLine("1st number is less than 2nd number");
 }
-switch(operation)
+
+string messages = operation switch
 {
-    case "+":System.Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");break;
-    case "-":System.Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");break;
-    case "*":System.Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");break;
-    case "/":System.Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");break;
-    case "%":System.Console.WriteLine($"{firstNumber} % {secondNumber} = {firstNumber % secondNumber}");break;
-    default: System.Console.WriteLine("Operation Not Found!");break;
+    "+" => $"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}",
+    "-" => $"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}",
+    "*" => $"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}",
+    "/" => $"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}",
+    "%" => $"{firstNumber} % {secondNumber} = {firstNumber % secondNumber}",
+    _=>"Operation Not Found!"
+};
+System.Console.WriteLine(messages);
+
+if(firstNumber > 0)
+{
+    int counter = 0;
+    while(counter < firstNumber)
+    {
+        System.Console.Write(counter);
+        counter++;
+
+    }
 }
+// switch(operation)
+// {
+//     case "+":System.Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");break;
+//     case "-":System.Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");break;
+//     case "*":System.Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");break;
+//     case "/":System.Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");break;
+//     case "%":System.Console.WriteLine($"{firstNumber} % {secondNumber} = {firstNumber % secondNumber}");break;
+//     default: System.Console.WriteLine("Operation Not Found!");break;
+// }
